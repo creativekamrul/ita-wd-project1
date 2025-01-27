@@ -1,0 +1,164 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+* {
+    box-sizing: border-box;
+    font-family: "Roboto";
+}
+
+a {
+    display: inline-block;
+}
+
+@mixin section_header($color: #000) {
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 58px;
+    color: $color;
+}
+
+@mixin body_text($color: #000) {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 36px;
+    color: $color;
+}
+
+@mixin any_text($color: #000, $font_size: 18px, $line_height: 28px, $font_weight: 400) {
+    font-size: $font_size;
+    color: $color;
+    font-weight: $font_weight;
+    line-height: $line_height;
+}
+
+@mixin button($color: #fff, $hover_color: #000, $background: #000, $hover_bg: transparent) {
+    padding: 0;
+    border: none;
+    background: none;
+
+    a {
+        border: 1px solid #000;
+        padding: 12px 24px;
+        font-size: 16px;
+        line-height: 150%;
+        background: $background;
+        color: $color;
+        border-radius: 5px;
+        text-decoration: none;
+        transition: all 0.5s ease;
+
+        &:hover {
+            background-color: $hover_bg;
+            color: $hover_color;
+        }
+    }
+}
+
+@mixin d_flex($j_content: space-between,
+    $a_items: center,
+    $f_direction: row) {
+    display: flex;
+    justify-content: $j_content;
+    align-items: $a_items;
+    flex-direction: $f_direction;
+    flex-wrap: wrap;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    @include d_flex()
+}
+
+header {
+    padding: 16px;
+
+    .logo {
+        width: 20%;
+
+        img {
+            width: 130px;
+            height: 40px;
+            object-fit: contain;
+        }
+    }
+
+    .navbar {
+        width: 60%;
+        @include d_flex();
+
+        nav ul {
+            @include d_flex();
+            list-style: none;
+
+            li {
+                padding: 5px 10px;
+
+                a {
+                    @include any_text($font_size: 16px, $line_height: 150%);
+                    text-decoration: none;
+                    transition: all 0.5s ease;
+
+                    &:hover {
+                        padding-bottom: 3px;
+                        border-bottom: 1px solid #000;
+                    }
+                }
+            }
+        }
+
+        button {
+            @include button();
+        }
+    }
+}
+
+.hero {
+    min-height: 95vh;
+    @include d_flex();
+
+    .hero_titles {
+        width: 50%;
+
+        .wrapper {
+            max-width: 580px;
+            margin: auto;
+
+            h1 {
+                @include any_text($font_size: 56px, $font_weight: 700, $line_height: 120%)
+            }
+
+            p {
+                @include body_text();
+            }
+
+            .btn_grp {
+                button {
+                    &:first-child {
+                        @include button();
+                        margin-right: 16px;
+                    }
+
+                    &:last-child {
+                        @include button($color: #000,
+                            $background: transparent,
+                            $hover_bg: #000,
+                            $hover_color: #fff)
+                    }
+                }
+            }
+        }
+    }
+
+    .hero_img {
+        width: 50%;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+}
