@@ -37,8 +37,7 @@ header .logo {
 header .logo img {
   width: 130px;
   height: 40px;
-  -o-object-fit: contain;
-     object-fit: contain;
+  object-fit: contain;
 }
 header .navbar {
   width: 60%;
@@ -90,6 +89,9 @@ header .navbar button a {
 header .navbar button a:hover {
   background-color: transparent;
   color: #000;
+}
+header .hamburger {
+  display: none;
 }
 
 .hero {
@@ -167,8 +169,7 @@ header .navbar button a:hover {
 .hero .hero_img img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 
 .volunteers {
@@ -194,8 +195,7 @@ header .navbar button a:hover {
 .volunteers .container .logo_grid img {
   width: 125px;
   height: 40px;
-  -o-object-fit: contain;
-     object-fit: contain;
+  object-fit: contain;
 }
 
 .join_us {
@@ -210,8 +210,7 @@ header .navbar button a:hover {
 .join_us .container .join_img img {
   width: 616px;
   height: 640px;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   border-radius: 5px;
 }
 .join_us .container .join_us_titles {
@@ -364,8 +363,7 @@ header .navbar button a:hover {
 .our_mission .container .mission_img img {
   width: 616px;
   height: 640px;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   border-radius: 5px;
 }
 
@@ -495,8 +493,7 @@ header .navbar button a:hover {
   width: 100%;
   height: 300px;
   border-radius: 5px;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 .blog .container .blog_cards .card span {
   font-size: 14px;
@@ -564,8 +561,7 @@ header .navbar button a:hover {
 .reviews .container .review_wrapper .review .star_holder img {
   width: 20px;
   height: 20px;
-  -o-object-fit: contain;
-     object-fit: contain;
+  object-fit: contain;
 }
 .reviews .container .review_wrapper .review p {
   font-size: 20px;
@@ -591,8 +587,7 @@ header .navbar button a:hover {
 .reviews .container .review_wrapper .review .user img {
   height: 55px;
   width: 55px;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   border-radius: 200px;
 }
 .reviews .container .review_wrapper .review .user h5 {
@@ -691,8 +686,7 @@ footer .container .footer_top {
 footer .container .footer_top img {
   height: 40px;
   width: 130px;
-  -o-object-fit: contain;
-     object-fit: contain;
+  object-fit: contain;
 }
 footer .container .footer_top ul {
   list-style: none;
@@ -744,4 +738,150 @@ footer .container .footer_bottom nav ul a {
   color: #000;
   font-weight: 400;
   line-height: 28px;
+}
+
+@media only screen and (max-width: 600px) {
+  header .navbar {
+    display: none !important;
+  }
+  header .hamburger {
+    display: block;
+  }
+  header .hamburger button {
+    border: none;
+    background: transparent;
+    cursor: pointer;
+  }
+  .hero {
+    padding: 24px;
+    flex-direction: column;
+    gap: 24px;
+  }
+  .hero .hero_titles {
+    width: 100%;
+    margin-top: 48px;
+  }
+  .hero .hero_titles .wrapper h1 {
+    font-size: 40px;
+    color: #000;
+    font-weight: 700;
+    line-height: 120%;
+  }
+  .hero .hero_titles .wrapper .btn_grp {
+    margin-top: 40px;
+  }
+  .hero .hero_img {
+    width: 100%;
+  }
+  .volunteers {
+    padding: 48px 24px;
+  }
+  .volunteers .container {
+    width: 100%;
+  }
+  .volunteers .container .logo_grid {
+    flex-wrap: nowrap;
+    width: 100%;
+    overflow: auto;
+    margin-top: 24px;
+  }
+  .join_us {
+    padding: 48px 24px;
+  }
+  .join_us .container {
+    flex-direction: column;
+    width: 100%;
+  }
+  .join_us .container .join_img {
+    width: 100%;
+  }
+  .join_us .container .join_img img {
+    width: 100%;
+    height: auto;
+  }
+  .join_us .container .join_us_titles {
+    width: 100%;
+  }
+  .join_us .container .join_us_titles h2 {
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 130%;
+    color: #000;
+  }
+  .achivements {
+    padding: 48px 24px;
+  }
+  .achivements .container {
+    width: 100%;
+  }
+  .achivements .container h2 {
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 130%;
+    color: #000;
+  }
+  .achivements .container .counter_grp {
+    padding: 16px;
+    text-align: left;
+    justify-content: space-between;
+  }
+  .achivements .container .counter_grp .single_counter {
+    width: 50%;
+  }
+  .achivements .container .counter_grp .single_counter h3 {
+    font-size: 20px;
+    color: #000;
+    font-weight: 700;
+    line-height: 140%;
+    margin-bottom: -10px;
+  }
+  .our_mission {
+    padding: 48px 24px;
+  }
+  .our_mission .container {
+    width: 100%;
+    flex-direction: column;
+    gap: 24px;
+  }
+  .our_mission .container .mission_titles {
+    width: 100%;
+  }
+  .our_mission .container .mission_titles h2 {
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 130%;
+    color: #000;
+  }
+  .our_mission .container .mission_img {
+    width: 100%;
+  }
+  .our_mission .container .mission_img a {
+    width: 100%;
+  }
+  .our_mission .container .mission_img a img {
+    width: 100%;
+    height: auto;
+  }
+  .help {
+    padding: 48px 24px;
+  }
+  .help .container {
+    width: 100%;
+  }
+  .help .container h2 {
+    font-size: 32px;
+    color: #000;
+    font-weight: 700;
+    line-height: 120%;
+  }
+  .help .container p {
+    text-align: center;
+  }
+  .help .container .card_wrapper {
+    flex-direction: column;
+    gap: 32px;
+  }
+  .help .container .card_wrapper .single_card {
+    width: 100%;
+  }
 }/*# sourceMappingURL=style.css.map */
